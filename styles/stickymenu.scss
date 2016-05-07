@@ -5,21 +5,28 @@
 }
 
 .menu-stickymenu-container:not(.sticky-header) {
-  position: fixed;
   width: 100%;
-  z-index: 1001;
-  top: 0;
 }
 
-#menu-stickymenu,
+#menu-stickymenu {
+	background: $color-dark;
+	text-align: center;
+}
+
+#menu-stickymenu li {
+	background: $color-main2;
+}
+
 #menu-stickymenu li,
-#menu-stickymenu li:hover,
-#menu-stickymenu a,
-#menu-stickymenu a:hover {
-  background: black;
-  color: white;
+#menu-stickymenu a {
+  color: $color-light;
   text-decoration: none;
   text-align: center;
+}
+
+#menu-stickymenu li:hover,
+#menu-stickymenu a:hover {
+	color: $color-dark;
 }
 
 #menu-stickymenu a {
@@ -29,9 +36,8 @@
   font-size: 1em;
 }
 
-#menu-stickymenu a:hover,
 #menu-stickymenu a.selected {
-  color: $dark-gold;
+  background: $color-main1;
 }
 
 #menu-stickymenu li {
@@ -43,7 +49,7 @@
 
 .show-menu {
   text-decoration: none;
-  background: black;
+  background: $color-dark;
   color: white;
   padding: .5em .5em .5em 1em;
   font-size: 30px;

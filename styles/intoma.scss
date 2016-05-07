@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,700);
+
+html, body {
+  background: $color-light;
+}
+
+.entry-content {
+  min-height: 200px;
+  border-top: 1px solid $color-dark;
+  margin: 1em;
+}
+
+.clearfix {
+  clear:both;
+}

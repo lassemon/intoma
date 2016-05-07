@@ -16,91 +16,62 @@
 
 get_header(); ?>
 <div id="fouc">
-    <div class="content-area parallax">
-        <section id="showreel" class="showreel parallax-group clearfix">
-            <div class="parallax-layer parallax-layer-base">
-                <div class="parallax-layer-section vertical-center clearfix">
-                    <?php
-                        $query = new WP_query('pagename=home');
-
-                        if( $query->have_posts() ){
-                            while( $query->have_posts() ){
-                                $query->the_post();
-                                echo '<div class="entry-content clearfix">';
-                                the_content();
-                                echo '</div>';
-                            }
-                        }
-
-                        wp_reset_postdata();
-                    ?>
-                </div>
-            </div>
+    <div class="container">
+        <section id="home" class="showreel clearfix">
+          <?php
+              $query = new WP_query('pagename=home');
+              if( $query->have_posts() ){
+                  while( $query->have_posts() ){
+                      $query->the_post();
+                      echo '<div class="entry-content clearfix">';
+                      the_content();
+                      echo '</div>';
+                  }
+              }
+              wp_reset_postdata();
+          ?>
         </section>
-
-        <section id="aboutme" class="aboutme parallax-group clearfix">
-            <div class="parallax-layer parallax-layer-base">
-                <div class="parallax-layer-section clearfix">
-                    <?php
-                        $query = new WP_query('pagename=aboutme');
-
-                        if( $query->have_posts() ){
-                            while( $query->have_posts() ){
-                                $query->the_post();
-                                echo '<div class="entry-content vertical-center clearfix">';
-                                the_content();
-                                echo '</div>';
-                            }
-                        }
-
-                        wp_reset_postdata();
-                    ?>
-                </div>
-            </div>
-            <div class="parallax-layer parallax-layer-back"></div>
+        <section id="aboutme" class="aboutme clearfix">
+          <?php
+              $query = new WP_query('pagename=aboutme');
+              if( $query->have_posts() ){
+                  while( $query->have_posts() ){
+                      $query->the_post();
+                      echo '<div class="entry-content clearfix">';
+                      the_content();
+                      echo '</div>';
+                  }
+              }
+              wp_reset_postdata();
+          ?>
         </section>
-
-        <section id="pricing" class="pricing parallax-group clearfix">
-            <div class="parallax-layer parallax-layer-base">
-                <div class="parallax-layer-section vertical-center clearfix">
-                    <?php
-                        $query = new WP_query('pagename=services');
-
-                        if( $query->have_posts() ){
-                            while( $query->have_posts() ){
-                                $query->the_post();
-                                echo '<div class="entry-content clearfix">';
-                                the_content();
-                                echo '</div>';
-                            }
-                        }
-
-                        wp_reset_postdata();
-                    ?>
-                </div>
-            </div>
-            <div class="parallax-layer parallax-layer-back"></div>
+        <section id="pricing" class="pricing clearfix">
+          <?php
+              $query = new WP_query('pagename=services');
+              if( $query->have_posts() ){
+                  while( $query->have_posts() ){
+                      $query->the_post();
+                      echo '<div class="entry-content clearfix">';
+                      the_content();
+                      echo '</div>';
+                  }
+              }
+              wp_reset_postdata();
+          ?>
         </section>
-
-        <section id="contact" class="contact parallax-group clearfix">
-            <div class="parallax-layer parallax-layer-base">
-                <div class="parallax-layer-section vertical-center clearfix">
-                    <?php
-                        $query = new WP_query('pagename=contact');
-
-                        if( $query->have_posts() ){
-                            while( $query->have_posts() ){
-                                $query->the_post();
-                                echo '<div class="entry-content clearfix">';
-                                the_content();
-                                echo '</div>';
-                            }
-                        }
-
-                        wp_reset_postdata();
-                    ?>
-                </div>
-            </div>
+        <section id="contact" class="contact clearfix">
+          <?php
+              $query = new WP_query('pagename=contact');
+              if( $query->have_posts() ){
+                  while( $query->have_posts() ){
+                      $query->the_post();
+                      echo '<div class="entry-content clearfix">';
+                      the_content();
+                      echo '</div>';
+                  }
+              }
+              wp_reset_postdata();
+          ?>
         </section>
     </div>
 </div>
