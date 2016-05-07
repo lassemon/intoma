@@ -5,7 +5,13 @@
 }
 
 .menu-stickymenu-container:not(.sticky-header) {
+  position: fixed;
   width: 100%;
+  z-index: 1001;
+  left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 80px;
 }
 
 #menu-stickymenu {
@@ -33,7 +39,7 @@
   border: 0;
   text-shadow: none;
   position: static;
-  font-size: 1em;
+  font-size: .7em;
 }
 
 #menu-stickymenu a.selected {
@@ -43,8 +49,7 @@
 #menu-stickymenu li {
   float: none;
   position: static;
-  display: inline-block;
-  padding: 2em;
+  display: block;
 }
 
 .show-menu {
@@ -68,30 +73,4 @@ input#show-menu[type=checkbox]:checked ~ #menu-stickymenu {
 
 input#show-menu[type=checkbox]:checked ~ #menu-stickymenu li a {
   text-align: left;
-}
-
-@media screen and (max-width : 1100px) {
-	/*Make dropdown links appear inline*/
-	#menu-stickymenu {
-	    position: static;
-	    display: none;
-	}
-	#menu-stickymenu li + li {
-	    border-left: 0;
-	}
-	/*Create vertical spacing*/
-	#menu-stickymenu li {
-	    padding: .3em 0;
-	    border-bottom: 1px solid black;
-	    float: none;
-	}
-
-	/*Make all menu links full width*/
-	#menu-stickymenu li, #menu-stickymenu li a {
-	    width: 100%;
-	}
-	/*Display 'show menu' link*/
-	.show-menu {
-	    display:block;
-	}
 }

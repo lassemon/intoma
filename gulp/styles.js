@@ -12,8 +12,8 @@ gulp.task('styles', function() {
 		onError: console.error.bind(console, 'Sass error:')
 	}))
 	.pipe(autoprefixer('last 2 version'))
-    .pipe(rename('bundle.css'))
-	.pipe(gulp.dest('./.tmp/'))
+    .pipe(rename('style.css'))
+	.pipe(gulp.dest('./'))
 });
 
 

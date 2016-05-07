@@ -9,7 +9,6 @@ gulp.task('serve', ['styles'], function () {
     server: {
       baseDir: ['./.tmp', './app']
     }
-
   });
 
   gulp.watch([

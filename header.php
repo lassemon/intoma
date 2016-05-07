@@ -13,7 +13,6 @@
   	<meta name="description" content="">
  	<meta name="viewport" content="width=device-width, initial-scale=1">
  	<?php wp_head(); ?>
- 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Vollkorn">
 </head>
 
 <body>
@@ -22,9 +21,7 @@
 		/* custom menu */
 		wp_nav_menu( array(
 			'menu' => 'StickyMenu',
-			'items_wrap' => '<label for="show-menu" class="show-menu">&#9776;</label>
-			<input type="checkbox" id="show-menu" role="button">
-			<ul id="%1$s" class="%2$s">%3$s</ul>'
+			'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>'
 		) );
 	}
 	else {

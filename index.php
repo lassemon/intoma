@@ -45,7 +45,7 @@ get_header(); ?>
               wp_reset_postdata();
           ?>
         </section>
-        <section id="pricing" class="pricing clearfix">
+        <section id="services" class="pricing clearfix">
           <?php
               $query = new WP_query('pagename=services');
               if( $query->have_posts() ){
