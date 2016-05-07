@@ -11,8 +11,20 @@ jQuery(document).ready(function($) {
   	}
   }
 
+  function setSelectedMenuItemStyles(clickedLink){
+		clickedLink.parent().siblings().find("a").removeClass("selected");
+		clickedLink.addClass("selected");
+	}
+
+  function initNavigation(){
+    stickyMenuContainer.find('li').on('click', function(){
+      setSelectedMenuItemStyles(jQuery(this).find('a'));
+    });
+  }
+
   function init(){
     addSelectedFromHashUrl();
+    initNavigation();
   }
 
   init();
