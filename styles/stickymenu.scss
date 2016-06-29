@@ -4,7 +4,7 @@
   margin: 0;
 }
 
-.menu-stickymenu-container:not(.sticky-header) {
+.menu-stickymenu-container {
   position: fixed;
   width: 100%;
   z-index: 1001;
@@ -15,12 +15,21 @@
 }
 
 #menu-stickymenu {
-	background: $color-dark;
+	background: $color-main1;
 	text-align: center;
+  padding: 1em 1em 1em 0;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
 }
 
 #menu-stickymenu li {
 	background: $color-main2;
+  margin: 0 0 1em 0;
+  cursor: pointer;
+}
+
+#menu-stickymenu li:last-child {
+  margin: 0;
 }
 
 #menu-stickymenu li,
@@ -42,13 +51,11 @@
   font-size: .7em;
 }
 
-#menu-stickymenu a.selected {
-  background: $color-main1;
+#menu-stickymenu .selected {
+  background: $color-dark;
 }
 
 #menu-stickymenu li {
-  float: none;
-  position: static;
   display: block;
 }
 

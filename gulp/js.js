@@ -4,6 +4,7 @@ var concat = require('gulp-concat');
 
 var jsPaths = [
 	'./node_modules/jquery/dist/jquery.min.js',
+	'./node_modules/waypoints/lib/jquery.waypoints.min.js',
 	'./js/**/*.js'
 ];
 

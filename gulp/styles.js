@@ -9,8 +9,7 @@ gulp.task('styles', function() {
 	.pipe(sass({
 		outputStyle: 'nested',
 		includePaths: ['.'],
-		onError: console.error.bind(console, 'Sass error:')
-	}))
+	}).on('error', sass.logError))
 	.pipe(autoprefixer('last 2 version'))
     .pipe(rename('style.css'))
 	.pipe(gulp.dest('./'))
@@ -22,8 +21,7 @@ gulp.task('styles-dist', function() {
 	.pipe(sass({
 		outputStyle: 'nested',
 		includePaths: ['.'],
-		onError: console.error.bind(console, 'Sass error:')
-	}))
+	}).on('error', sass.logError))
 	.pipe(autoprefixer('last 2 version'))
     .pipe(rename('bundle.css'))
     .pipe(minifycss())
