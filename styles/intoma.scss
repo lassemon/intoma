@@ -2,10 +2,21 @@
 
 html, body {
   background: $color-light;
+  color: $color-main2;
 }
 
 p {
   font-size: 1.2em;
+}
+
+ul {
+  list-style: none;
+}
+
+ul > li:before {
+  content: "\25CF";
+  margin: 0 .5em 0 0;
+  color: $color-main4;
 }
 
 .container {
@@ -23,7 +34,7 @@ p {
 
 .matikka, .nepsy, .yhteystiedot {
   padding: 1em 0 0 0;
-  border-top: 1px solid $color-dark;
+  border-top: 1px solid $color-main4;
 }
 
 .matikka > .row {
@@ -51,6 +62,7 @@ p {
 .open-trainings:after {
   content: "\25BA";
   margin: 0 0 0 .5em;
+  color: $color-main4;
 }
 .open-trainings-open {
   background: $color-main1;
@@ -59,6 +71,7 @@ p {
 
 .open-trainings-open:after {
   content: "\25BC";
+  color: white;
 }
 
 .training-container {
@@ -73,6 +86,7 @@ p {
 
 .training1 {
   background: $color-main1;
+  color: $color-main2;
 }
 .training2 {
   background: $color-main2;
@@ -80,6 +94,7 @@ p {
 }
 .training3 {
   background: $color-main1;
+  color: $color-main2;
 }
 .training4 {
   background: $color-main2;
@@ -89,6 +104,7 @@ p {
 @media (min-width: 550px) {
   .training1 {
     background: $color-main1;
+    color: $color-main2;
   }
   .training2 {
     background: $color-main2;
@@ -100,6 +116,7 @@ p {
   }
   .training4 {
     background: $color-main1;
+    color: $color-main2;
   }
 }
 

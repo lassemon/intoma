@@ -822,10 +822,19 @@ there.
 /* Larger than desktop */
 /* Larger than Desktop HD */
 html, body {
-  background: #EDF2F4; }
+  background: #EDF2F4;
+  color: #2B2D42; }
 
 p {
   font-size: 1.2em; }
+
+ul {
+  list-style: none; }
+
+ul > li:before {
+  content: "\25CF";
+  margin: 0 .5em 0 0;
+  color: #D80032; }
 
 .container {
   width: 90%;
@@ -839,7 +848,7 @@ p {
 
 .matikka, .nepsy, .yhteystiedot {
   padding: 1em 0 0 0;
-  border-top: 1px solid #2B2D42; }
+  border-top: 1px solid #D80032; }
 
 .matikka > .row {
   margin: 0 0 0 1em; }
@@ -861,14 +870,16 @@ p {
 
 .open-trainings:after {
   content: "\25BA";
-  margin: 0 0 0 .5em; }
+  margin: 0 0 0 .5em;
+  color: #D80032; }
 
 .open-trainings-open {
   background: #8D99AE;
   color: white; }
 
 .open-trainings-open:after {
-  content: "\25BC"; }
+  content: "\25BC";
+  color: white; }
 
 .training-container {
   display: none; }
@@ -879,14 +890,16 @@ p {
   border-radius: 1em; }
 
 .training1 {
-  background: #8D99AE; }
+  background: #8D99AE;
+  color: #2B2D42; }
 
 .training2 {
   background: #2B2D42;
   color: white; }
 
 .training3 {
-  background: #8D99AE; }
+  background: #8D99AE;
+  color: #2B2D42; }
 
 .training4 {
   background: #2B2D42;
@@ -894,7 +907,8 @@ p {
 
 @media (min-width: 550px) {
   .training1 {
-    background: #8D99AE; }
+    background: #8D99AE;
+    color: #2B2D42; }
   .training2 {
     background: #2B2D42;
     color: white; }
@@ -902,7 +916,8 @@ p {
     background: #2B2D42;
     color: white; }
   .training4 {
-    background: #8D99AE; } }
+    background: #8D99AE;
+    color: #2B2D42; } }
 
 .clearfix {
   clear: both; }
