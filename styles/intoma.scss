@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:600,400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic);
 
 html, body {
   background: $color-light;
@@ -11,6 +12,12 @@ p {
 
 ul {
   list-style: none;
+  margin: 0 0 0 1em;
+}
+
+ul > li {
+  font-size: 1.1em;
+  font-weight: 600;
 }
 
 ul > li:before {
@@ -41,85 +48,95 @@ ul > li:before {
   margin: 0 0 0 1em;
 }
 
+.matikka .entry-content > h2 {
+  display: inline-block;
+}
+
+.openMatikkaInfo {
+  display: inline-block;
+}
+
+.openMatikkaInfo__icon {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  margin: 0 0 0 .3em;
+  line-height: 1.2em;
+  text-align: center;
+  text-decoration: none;
+
+  font-weight: 600;
+  border-radius: 10em;
+  color: $color-text-light;
+  background: $color-main4;
+  transition: all 0.2s;
+}
+
+.openMatikkaInfo__icon:hover {
+  color: $color-text-light;
+  transform:scale(1.2);
+}
+
+#matikkaInfoText {
+  display: none;
+}
+
 .profile-image {
   margin: 0 0 1em 0;
   border-radius: 12em;
-  border: .7em solid white;
+  border: .7em solid $color-text-light;
   float: left;
   width: 90%;
 }
 
-.open-trainings {
+.trainings {
+  margin: 0 0 0 1em;
+}
+
+.training {
   padding: .5em;
-  margin: 0;
+  margin: 0 0 1em 0;
+  border-radius: 1em;
   cursor: pointer;
 }
 
-.open-trainings:hover {
+.training:hover {
   background: $color-main1;
+  border-radius: 1em;
 }
 
-.open-trainings:after {
+.training__header {
+  display: inline-block;
+  margin: .3em;
+}
+
+.training__header:after {
   content: "\25BA";
   margin: 0 0 0 .5em;
   color: $color-main4;
 }
-.open-trainings-open {
-  background: $color-main1;
-  color: white;
-}
 
-.open-trainings-open:after {
-  content: "\25BC";
-  color: white;
-}
-
-.training-container {
+.training__text {
   display: none;
+  margin: .5em 0 .5em 1em;
+  font-size: .9em;
 }
 
-.training {
-  padding: 1em;
-  margin: 0 0 2em 0;
-  border-radius: 1em;
-}
-
-.training1 {
+.training--open {
   background: $color-main1;
-  color: $color-main2;
-}
-.training2 {
-  background: $color-main2;
-  color: white;
-}
-.training3 {
-  background: $color-main1;
-  color: $color-main2;
-}
-.training4 {
-  background: $color-main2;
-  color: white;
-}
+  color: $color-text-light;
 
-@media (min-width: 550px) {
-  .training1 {
-    background: $color-main1;
-    color: $color-main2;
-  }
-  .training2 {
-    background: $color-main2;
-    color: white;
-  }
-  .training3 {
-    background: $color-main2;
-    color: white;
-  }
-  .training4 {
-    background: $color-main1;
-    color: $color-main2;
+  .training__header:after {
+    content: "\25BC";
+    color: $color-text-light;
   }
 }
 
+.training--open:hover {
+  .training__header:after {
+    color: $color-main4;
+  }
+}
 
 .clearfix {
   clear:both;
@@ -129,4 +146,66 @@ ul > li:before {
   content: "";
   display: table;
   clear: both;
+}
+
+blockquote {
+  margin: 3em 0 0 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4em;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  color: #929292;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before,
+blockquote:after {
+  color: #ccc;
+  font-family: serif;
+  font-size: 12em;
+  line-height: 0.05em;
+}
+
+blockquote:before {
+  content: open-quote;
+  vertical-align: -0.4em;
+  margin-right: .015em;
+}
+blockquote:after {
+  content: close-quote;
+  vertical-align: -0.6em;
+  margin-left: -.15em
+}
+blockquote p {
+  display: inline;
+}
+.remodal-wrapper {
+  margin: 1em 0;
+}
+.remodal {
+  max-width: 960px;
+  background: $color-light;
+}
+
+.remodal-confirm, .remodal-cancel {
+  line-height: 12px;
+}
+
+.remodal-close {
+  position: absolute;
+  top: .5em;
+  left: .5em;
+  width: 35px;
+  height: 35px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.2s;
+  text-decoration: none;
+  color: $color-text-light;
+  border: 0;
+  outline: 0;
+  background: $color-main4;
+  border-radius: 2em;
 }

@@ -15,7 +15,22 @@
  */
 
 get_header(); ?>
-<div id="fouc">
+<?php
+    $query = new WP_query('pagename=matikkainfo');
+    if( $query->have_posts() ){
+        while( $query->have_posts() ){
+            $query->the_post();
+            echo '<div class="remodal" data-remodal-id="modal">';
+            echo '<button data-remodal-action="close" class="remodal-close"></button>';
+            the_content();
+            echo '<button data-remodal-action="confirm" class="remodal-confirm">OK</button>';
+            echo '</div>';
+        }
+    }
+    wp_reset_postdata();
+?>
+
+<div id="fouc" class="remodal-bg">
     <div class="container">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
  width="100%" height="181px" viewBox="0 0 177.195 94.667" enable-background="new 0 0 177.195 94.667"
@@ -63,77 +78,75 @@ M150.589,19.105"/>
         </section>
         <section id="matikka" class="matikka clearfix">
           <?php
+            echo '<div class="entry-content clearfix">';
               $query = new WP_query('pagename=matikka');
               if( $query->have_posts() ){
                   while( $query->have_posts() ){
                       $query->the_post();
-                      echo '<div class="entry-content clearfix">';
+
                       the_content();
-                      echo '<p class="open-trainings">Lisää palveluista</p>';
-                      echo '</div>';
                   }
               }
               wp_reset_postdata();
+
+              $query = new WP_query( array(
+                'category_name' => 'koulutus',
+                'orderby' => 'date',
+	              'order'   => 'ASC'
+              ) );
+              if( $query->have_posts() ){
+                echo '<div class="trainings clearfix">';
+                  while( $query->have_posts() ){
+                      $query->the_post();
+                      echo '<div class="training clearfix">';
+                      echo '<h5 class="training__header">';
+                      the_title();
+                      echo '</h5>';
+                      echo '<div class="training__text">';
+                      the_content();
+                      echo '</div>';
+                      echo '</div>';
+                  }
+                echo '</div>';
+              }
+              wp_reset_postdata();
+            echo '</div>';
           ?>
-          <div class="training-container">
-            <div class="row">
-              <div class="one-half column">
-                <div class="training training1">
-                  <h3>Palvelu 1</h3>
-                  <ul>
-                    <li>foo</li>
-                    <li>bar</li>
-                    <li>foo</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="one-half column">
-                <div class="training training2">
-                  <h3>Palvelu 2</h3>
-                  <ul>
-                    <li>foo</li>
-                    <li>bar</li>
-                    <li>foo</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="one-half column">
-                <div class="training training3">
-                  <h3>Palvelu 3</h3>
-                  <ul>
-                    <li>foo</li>
-                    <li>bar</li>
-                    <li>foo</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="one-half column">
-                <div class="training training4">
-                  <h3>Palvelu 4</h3>
-                  <ul>
-                    <li>foo</li>
-                    <li>bar</li>
-                    <li>foo</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
         </section>
         <section id="nepsy" class="nepsy clearfix">
           <?php
+            echo '<div class="entry-content clearfix">';
               $query = new WP_query('pagename=nepsy');
               if( $query->have_posts() ){
                   while( $query->have_posts() ){
                       $query->the_post();
-                      echo '<div class="entry-content clearfix">';
                       the_content();
-                      echo '</div>';
                   }
               }
               wp_reset_postdata();
+
+              $query = new WP_query( array(
+                'category_name' => 'nepsy',
+                'orderby' => 'date',
+	              'order'   => 'ASC'
+              ) );
+              if( $query->have_posts() ){
+                echo '<div class="trainings clearfix">';
+                  while( $query->have_posts() ){
+                      $query->the_post();
+                      echo '<div class="training clearfix">';
+                      echo '<h5 class="training__header">';
+                      the_title();
+                      echo '</h5>';
+                      echo '<div class="training__text">';
+                      the_content();
+                      echo '</div>';
+                      echo '</div>';
+                  }
+                echo '</div>';
+              }
+              wp_reset_postdata();
+            echo '</div>';
           ?>
         </section>
         <section id="yhteystiedot" class="yhteystiedot clearfix">
