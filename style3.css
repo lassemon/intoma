@@ -652,8 +652,8 @@ html.remodal-is-locked {
     width: 85%;
     padding: 0; } }
 
-/* For devices larger than 550px */
-@media (min-width: 550px) {
+/* For devices larger than 780px */
+@media (min-width: 780px) {
   .container {
     width: 80%; }
   .column,
@@ -792,7 +792,7 @@ h6 {
   letter-spacing: 0; }
 
 /* Larger than phablet */
-@media (min-width: 550px) {
+@media (min-width: 780px) {
   h1 {
     font-size: 5.0rem; }
   h2 {
@@ -1102,6 +1102,28 @@ ul > li:before {
 .home .entry-content {
   margin: 0; }
 
+.goals {
+  text-align: center; }
+
+.goals p {
+  margin: 0; }
+
+.goals .entry-content {
+  margin: 0; }
+
+.goals .column .header {
+  font-weight: 600;
+  font-size: 2em;
+  width: 6em;
+  display: inline-block;
+  padding: 2.7em .5em;
+  margin: 0 0 1em 0;
+  color: #E8F1F2;
+  background: #006494;
+  border-radius: 6em;
+  border: 0.2em solid white;
+  box-shadow: 6px 3px 15px 0px rgba(0, 0, 0, 0.3); }
+
 .matikka, .nepsy, .yhteystiedot {
   padding: 1em 0 0 0;
   border-top: 1px solid #1B98E0; }
@@ -1112,41 +1134,16 @@ ul > li:before {
 .matikka .entry-content > h2 {
   display: inline-block; }
 
-/*
-.openMatikkaInfo {
-  display: inline-block;
-}
-
-.openMatikkaInfo__icon {
-  display: inline-block;
-  width: 1.2em;
-  height: 1.2em;
-  margin: 0 0 0 .3em;
-  line-height: 1.2em;
-  text-align: center;
-  text-decoration: none;
-
-  font-weight: 600;
-  border-radius: 10em;
-  color: $color-text-light;
-  background: $color-main4;
-  transition: all 0.2s;
-}
-
-.openMatikkaInfo__icon:hover {
-  color: $color-text-light;
-  transform:scale(1.2);
-}*/
 #matikkaInfoText {
   display: none; }
 
 .profile-image {
   margin: 0 0 1em 0;
   border-radius: 12em;
-  border: 0.7em solid #13293D;
+  border: 0.7em solid white;
   float: left;
   width: 90%;
-  box-shadow: 6px 6px 26px 0px rgba(0, 0, 0, 0.5); }
+  box-shadow: 6px 3px 15px 0px rgba(0, 0, 0, 0.3); }
 
 .trainings {
   margin: 0 0 0 1em; }
@@ -1243,10 +1240,6 @@ blockquote p {
 
 .arrow {
   display: inline-block;
-  margin-bottom: 2.5rem; }
-
-.arrow > a {
-  display: inline-block;
   background: #1B98E0;
   color: #E8F1F2;
   line-height: 3em;
@@ -1256,7 +1249,7 @@ blockquote p {
   border-radius: .3em;
   box-shadow: inset 0 1px 0 0 #73c1ee, inset 0 -1px 0 0 #247BA0, inset 0 0 0 1px #247BA0; }
 
-.arrow > a::after {
+.arrow::after {
   position: relative;
   top: .05em;
   content: "";
@@ -1269,11 +1262,42 @@ blockquote p {
   transform: rotate(45deg);
   margin-left: 0.5em; }
 
+.step {
+  position: relative;
+  padding: 0 0 1em 0; }
+
+.step::after {
+  top: 0;
+  content: "";
+  display: inline-block;
+  /* By using an em scale, the arrows will size with the font */
+  width: 1em;
+  height: 1em;
+  border-right: 0.8em solid #1B98E0;
+  border-bottom: 0.8em solid #1B98E0;
+  transform: rotate(45deg);
+  z-index: 100; }
+
+@media (min-width: 780px) {
+  .step::after {
+    position: absolute;
+    top: 6.5em;
+    right: -2em;
+    border-right: 0.8em solid #1B98E0;
+    border-top: 0.8em solid #1B98E0;
+    border-bottom: 0;
+    margin-left: 0.5em; } }
+
 .openMatikkaInfo {
+  margin-bottom: 2.5rem;
+  display: inline-block; }
+
+.openMatikkaInfo > a {
+  color: #E8F1F2;
   transition: all 0.2s;
   cursor: pointer; }
 
-.openMatikkaInfo:hover {
+.openMatikkaInfo:hover > a {
   transform: scale(1.05); }
 
 .openMatikkaInfo:hover::after {

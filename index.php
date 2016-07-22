@@ -85,6 +85,24 @@ M150.589,19.105"/>
               wp_reset_postdata();
           ?>
         </section>
+        <section id="goals" class="goals clearfix">
+          <div class="row">
+            <div class="entry-content clearfix">
+              <div class="one-third column step">
+                <div class="header">oivaltaminen</div>
+                <p>laskeminen kontreettisesti välineen avulla</p>
+              </div>
+              <div class="one-third column step">
+                <div class="header">oppiminen</div>
+                <p>laskeminen välineestä tulleen muistikuvan avulla (laskustrategian oppiminen)</p>
+              </div>
+              <div class="one-third column">
+                <div class="header">osaaminen</div>
+                <p>laskeminen symbolitasolla ilman välinettä</p>
+              </div>
+            </div>
+          </div>
+        </section>
         <section id="matikka" class="matikka clearfix">
           <?php
             echo '<div class="entry-content clearfix">';

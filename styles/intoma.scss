@@ -39,6 +39,32 @@ ul > li:before {
   margin: 0;
 }
 
+.goals {
+  text-align: center;
+}
+
+.goals p {
+  margin: 0;
+}
+
+.goals .entry-content {
+  margin: 0;
+}
+
+.goals .column .header {
+  font-weight: 600;
+  font-size: 2em;
+  width: 6em;
+  display: inline-block;
+  padding: 2.7em .5em;
+  margin: 0 0 1em 0;
+  color: $color-light;
+  background: $color-main2;
+  border-radius: 6em;
+  border: .2em solid lighten($color-light, 40);
+  box-shadow: 6px 3px 15px 0px rgba(0,0,0,0.3);
+}
+
 .matikka, .nepsy, .yhteystiedot {
   padding: 1em 0 0 0;
   border-top: 1px solid $color-main4;
@@ -52,32 +78,6 @@ ul > li:before {
   display: inline-block;
 }
 
-/*
-.openMatikkaInfo {
-  display: inline-block;
-}
-
-.openMatikkaInfo__icon {
-  display: inline-block;
-  width: 1.2em;
-  height: 1.2em;
-  margin: 0 0 0 .3em;
-  line-height: 1.2em;
-  text-align: center;
-  text-decoration: none;
-
-  font-weight: 600;
-  border-radius: 10em;
-  color: $color-text-light;
-  background: $color-main4;
-  transition: all 0.2s;
-}
-
-.openMatikkaInfo__icon:hover {
-  color: $color-text-light;
-  transform:scale(1.2);
-}*/
-
 #matikkaInfoText {
   display: none;
 }
@@ -85,10 +85,10 @@ ul > li:before {
 .profile-image {
   margin: 0 0 1em 0;
   border-radius: 12em;
-  border: .7em solid $color-main1;
+  border: .7em solid lighten($color-light, 40);
   float: left;
   width: 90%;
-  box-shadow: 6px 6px 26px 0px rgba(0,0,0,0.5);
+  box-shadow: 6px 3px 15px 0px rgba(0,0,0,0.3);
 }
 
 .trainings {
@@ -204,11 +204,6 @@ blockquote p {
 
 .arrow {
   display: inline-block;
-  margin-bottom: 2.5rem;
-}
-
-.arrow > a {
-  display: inline-block;
   background: $color-main4;
   color: $color-light;
   line-height: 3em;
@@ -219,7 +214,7 @@ blockquote p {
   box-shadow: inset 0 1px 0 0 lighten($color-main4, 20),inset 0 -1px 0 0 $color-main3,inset 0 0 0 1px $color-main3;
 }
 
-.arrow > a::after {
+.arrow::after {
   position: relative;
   top: .05em;
   content: "";
@@ -232,12 +227,47 @@ blockquote p {
   transform: rotate(45deg);
   margin-left: 0.5em;
 }
-.openMatikkaInfo {
-   transition: all 0.2s;
-   cursor: pointer;
+
+.step {
+  position: relative;
+  padding: 0 0 1em 0;
 }
 
-.openMatikkaInfo:hover {
+.step::after {
+  top: 0;
+  content: "";
+  display: inline-block;
+  /* By using an em scale, the arrows will size with the font */
+  width: 1em;
+  height: 1em;
+  border-right: 0.8em solid $color-main4;
+  border-bottom: 0.8em solid $color-main4;
+  transform: rotate(45deg);
+  z-index: 100;
+}
+
+@media (min-width: 780px) {
+  .step::after {
+    position: absolute;
+    top: 6.5em;
+    right: -2em;
+    border-right: 0.8em solid $color-main4;
+    border-top: 0.8em solid $color-main4;
+    border-bottom: 0;
+    margin-left: 0.5em;
+  }
+}
+.openMatikkaInfo {
+  margin-bottom: 2.5rem;
+  display: inline-block;
+}
+.openMatikkaInfo > a {
+  color: $color-light;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.openMatikkaInfo:hover > a {
   transform:scale(1.05);
 }
 
