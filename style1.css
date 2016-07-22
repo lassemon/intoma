@@ -1074,7 +1074,7 @@ there.
 /* Larger than Desktop HD */
 html, body {
   background: #EDF2F4;
-  color: #2B2D42; }
+  color: #535780; }
 
 p {
   font-size: 1.2em; }
@@ -1112,8 +1112,10 @@ ul > li:before {
 .matikka .entry-content > h2 {
   display: inline-block; }
 
+/*
 .openMatikkaInfo {
-  display: inline-block; }
+  display: inline-block;
+}
 
 .openMatikkaInfo__icon {
   display: inline-block;
@@ -1123,16 +1125,18 @@ ul > li:before {
   line-height: 1.2em;
   text-align: center;
   text-decoration: none;
+
   font-weight: 600;
   border-radius: 10em;
-  color: whitesmoke;
-  background: #D80032;
-  transition: all 0.2s; }
+  color: $color-text-light;
+  background: $color-main4;
+  transition: all 0.2s;
+}
 
 .openMatikkaInfo__icon:hover {
-  color: whitesmoke;
-  transform: scale(1.2); }
-
+  color: $color-text-light;
+  transform:scale(1.2);
+}*/
 #matikkaInfoText {
   display: none; }
 
@@ -1155,6 +1159,7 @@ ul > li:before {
 
 .training:hover {
   background: #8D99AE;
+  color: white;
   border-radius: 1em; }
 
 .training__header {
@@ -1173,13 +1178,10 @@ ul > li:before {
 
 .training--open {
   background: #8D99AE;
-  color: whitesmoke; }
+  color: white; }
   .training--open .training__header:after {
     content: "\25BC";
-    color: whitesmoke; }
-
-.training--open:hover .training__header:after {
-  color: #D80032; }
+    color: white; }
 
 .clearfix {
   clear: both; }
@@ -1196,12 +1198,12 @@ blockquote {
   font-weight: 300;
   font-style: italic;
   text-align: center;
-  color: #929292;
+  color: #2f444d;
   quotes: "“" "”" "‘" "’"; }
 
 blockquote:before,
 blockquote:after {
-  color: #ccc;
+  color: #cddbe1;
   font-family: serif;
   font-size: 12em;
   line-height: 0.05em; }
@@ -1219,32 +1221,98 @@ blockquote:after {
 blockquote p {
   display: inline; }
 
+.colors {
+  margin: 1em 0 0 0; }
+
+.colors > ul > li {
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid #2B2D42;
+  width: 25px;
+  height: 25px;
+  padding: .4em;
+  margin: 0 .4em;
+  border-radius: 2em; }
+
+.colors > ul > li.selected {
+  color: #EDF2F4;
+  background: #D80032; }
+
+.colors > ul > li:before {
+  content: ""; }
+
+.arrow {
+  display: inline-block;
+  margin-bottom: 2.5rem; }
+
+.arrow > a {
+  display: inline-block;
+  background: #D80032;
+  color: #EDF2F4;
+  line-height: 3em;
+  padding: 0 1em;
+  text-decoration: none;
+  border: 1px solid #72001a;
+  border-radius: .3em;
+  box-shadow: inset 0 1px 0 0 #ff3f6b, inset 0 -1px 0 0 #EF233C, inset 0 0 0 1px #EF233C; }
+
+.arrow > a::after {
+  position: relative;
+  top: .05em;
+  content: "";
+  display: inline-block;
+  /* By using an em scale, the arrows will size with the font */
+  width: .6em;
+  height: .6em;
+  border-right: 0.2em solid #EDF2F4;
+  border-top: 0.2em solid #EDF2F4;
+  transform: rotate(45deg);
+  margin-left: 0.5em; }
+
+.openMatikkaInfo {
+  transition: all 0.2s;
+  cursor: pointer; }
+
+.openMatikkaInfo:hover {
+  transform: scale(1.05); }
+
+.openMatikkaInfo:hover::after {
+  right: -1.45em; }
+
 .remodal-wrapper {
   margin: 1em 0; }
 
 .remodal {
   max-width: 960px;
-  background: #EDF2F4; }
+  background: #EDF2F4;
+  text-align: left; }
 
-.remodal-confirm, .remodal-cancel {
-  line-height: 12px; }
+.remodal-confirm, .remodal-cancel, .remodal-close {
+  background: #D80032;
+  color: #EDF2F4;
+  padding: 0 1em;
+  border: 1px solid #72001a;
+  border-radius: .3em;
+  box-shadow: inset 0 1px 0 0 #ff3f6b, inset 0 -1px 0 0 #EF233C, inset 0 0 0 1px #EF233C; }
 
 .remodal-close {
   position: absolute;
-  top: .5em;
-  left: .5em;
-  width: 35px;
-  height: 35px;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
-  transition: color 0.2s;
-  text-decoration: none;
-  color: whitesmoke;
-  border: 0;
-  outline: 0;
-  background: #D80032;
-  border-radius: 2em; }
+  top: 1em;
+  right: 1em;
+  left: auto;
+  width: 36px;
+  height: 36px; }
+
+.remodal-close,
+.remodal-confirm {
+  font-weight: 600;
+  color: white;
+  background: #D80032; }
+
+.remodal-close:hover,
+.remodal-confirm:hover {
+  color: #2B2D42;
+  background: #D80032; }
 
 .menu-stickymenu-container ul,
 .menu-stickymenu-container label {

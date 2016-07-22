@@ -32,6 +32,15 @@ get_header(); ?>
 
 <div id="fouc" class="remodal-bg">
     <div class="container">
+      <div class="colors">
+        <ul>
+          <li class="selected">1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+        </ul>
+      </div>
+
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
  width="100%" height="181px" viewBox="0 0 177.195 94.667" enable-background="new 0 0 177.195 94.667"
  xml:space="preserve">
@@ -158,7 +167,7 @@ M150.589,19.105"/>
                           $query->the_post();
                           echo '<div class="entry-content clearfix">';
                           echo '<div class="one-third column">';
-                          echo '  <img class="profile-image" src="wp-content/uploads/2016/06/cat.jpg"/>';
+                          echo '  <img class="profile-image" src="wp-content/uploads/2016/06/teija.jpg"/>';
                           echo '</div>';
                           echo '<div class="two-thirds column">';
                           the_content();

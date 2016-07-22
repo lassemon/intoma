@@ -1,0 +1,35 @@
+.remodal-wrapper {
+  margin: 1em 0;
+}
+.remodal {
+  max-width: 960px;
+  background: $color-light;
+  text-align: left;
+}
+.remodal-confirm, .remodal-cancel, .remodal-close {
+  background: $color-main4;
+  color: $color-light;
+  padding: 0 1em;
+  border:1px solid darken($color-main4, 20);
+  border-radius: .3em;
+  box-shadow: inset 0 1px 0 0 lighten($color-main4, 20),inset 0 -1px 0 0 $color-main3,inset 0 0 0 1px $color-main3;
+}
+.remodal-close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  left: auto;
+  width: 36px;
+  height: 36px;
+}
+.remodal-close,
+.remodal-confirm {
+  font-weight: 600;
+  color: $color-text-light;
+  background: $color-main4;
+}
+.remodal-close:hover,
+.remodal-confirm:hover{
+  color: $color-dark;
+  background: $color-main4;
+}

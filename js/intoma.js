@@ -4,8 +4,9 @@ jQuery(document).ready(function($) {
   var trainingsContainerClass = '.training__text';
 
 	var init = function(){
-    initMatikkaInfo();
+    //initMatikkaInfo();
     initOpenTrainings();
+    initColorPicker();
 	};
 
   var toggleTrainingsLink = function(trainingContainer){
@@ -47,6 +48,19 @@ jQuery(document).ready(function($) {
     });
 
   };
+
+  var initColorPicker = function(){
+    var colors = jQuery('.colors > ul > li');
+    jQuery.each(colors, function(index, value){
+      jQuery(value).click(function(){
+        jQuery(this).siblings().removeClass('selected');
+        jQuery(this).addClass('selected');
+        var csslink = $('#common-styles-css').attr('href');
+        var newlink = csslink.replace(/\d/, index+1)
+        $('#common-styles-css').attr('href', newlink);
+      });
+    });
+  }
 
   init();
 });
