@@ -1168,7 +1168,7 @@ ul > li:before {
   border-right: 0.2em solid #EDF2F4;
   border-top: 0.2em solid #EDF2F4;
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+          transform: rotate(45deg);
   margin-left: 0.5em; }
 
 .goals {

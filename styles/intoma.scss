@@ -41,14 +41,14 @@ ul > li:before {
 
 .arrow {
   display: inline-block;
-  background: #D80032;
-  color: #EDF2F4;
+  background: $color-main4;
+  color: $color-light;
   line-height: 3em;
   padding: 0 1em;
   text-decoration: none;
-  border: 1px solid #72001a;
+  border:1px solid darken($color-main4, 20);
   border-radius: .3em;
-  box-shadow: inset 0 1px 0 0 #ff3f6b, inset 0 -1px 0 0 #EF233C, inset 0 0 0 1px #EF233C;
+  box-shadow: inset 0 1px 0 0 lighten($color-main4, 20),inset 0 -1px 0 0 $color-main3,inset 0 0 0 1px $color-main3;
 }
 
 .arrow::after {
@@ -58,10 +58,9 @@ ul > li:before {
   display: inline-block;
   width: .6em;
   height: .6em;
-  border-right: 0.2em solid #EDF2F4;
-  border-top: 0.2em solid #EDF2F4;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  border-right: 0.2em solid $color-light;
+  border-top: 0.2em solid $color-light;
+  transform: rotate(45deg);
   margin-left: 0.5em;
 }
 
