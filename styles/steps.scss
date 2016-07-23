@@ -1,0 +1,63 @@
+.goals {
+  text-align: center;
+}
+
+.goals p {
+  margin: 0;
+}
+
+.goals .entry-content {
+  margin: 0 0 1em 0;
+}
+
+.goals .header {
+  cursor: pointer;
+  width: 8em;
+  height: 8em;
+  display: table;
+  margin: 0 auto 1em auto;
+  background: lighten($color-light, 40);
+  border-radius: 6em;
+  border: .2em solid $color-dark;
+  box-shadow: 6px 3px 15px 0px rgba(0,0,0,0.3);
+}
+
+.goals .header-text {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  font-weight: 600;
+  font-size: 1em;
+  color: $color-main2;
+}
+
+.step {
+  position: relative;
+  padding: 0 0 1em 0;
+}
+
+.step::after {
+  position: relative;
+  top: 0;
+  content: "";
+  display: inline-block;
+  /* By using an em scale, the arrows will size with the font */
+  width: 1em;
+  height: 1em;
+  border-right: 0.8em solid $color-dark;
+  border-bottom: 0.8em solid $color-dark;
+  transform: rotate(45deg);
+  z-index: 100;
+}
+
+@media (min-width: 780px) {
+  .step::after {
+    position: absolute;
+    top: 30%;
+    right: -2em;
+    border-right: 0.8em solid $color-dark;
+    border-top: 0.8em solid $color-dark;
+    border-bottom: 0;
+    margin-left: 0.5em;
+  }
+}

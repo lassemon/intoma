@@ -39,31 +39,33 @@ ul > li:before {
   margin: 0;
 }
 
-.goals {
-  text-align: center;
-}
-
-.goals p {
-  margin: 0;
-}
-
-.goals .entry-content {
-  margin: 0;
-}
-
-.goals .column .header {
-  font-weight: 600;
-  font-size: 2em;
-  width: 6em;
+.arrow {
   display: inline-block;
-  padding: 2.7em .5em;
-  margin: 0 0 1em 0;
-  color: $color-light;
-  background: $color-main2;
-  border-radius: 6em;
-  border: .2em solid lighten($color-light, 40);
-  box-shadow: 6px 3px 15px 0px rgba(0,0,0,0.3);
+  background: #D80032;
+  color: #EDF2F4;
+  line-height: 3em;
+  padding: 0 1em;
+  text-decoration: none;
+  border: 1px solid #72001a;
+  border-radius: .3em;
+  box-shadow: inset 0 1px 0 0 #ff3f6b, inset 0 -1px 0 0 #EF233C, inset 0 0 0 1px #EF233C;
 }
+
+.arrow::after {
+  position: relative;
+  top: .05em;
+  content: "";
+  display: inline-block;
+  width: .6em;
+  height: .6em;
+  border-right: 0.2em solid #EDF2F4;
+  border-top: 0.2em solid #EDF2F4;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin-left: 0.5em;
+}
+
+ @import 'steps';
 
 .matikka, .nepsy, .yhteystiedot {
   padding: 1em 0 0 0;
@@ -202,61 +204,6 @@ blockquote p {
   content: "";
 }
 
-.arrow {
-  display: inline-block;
-  background: $color-main4;
-  color: $color-light;
-  line-height: 3em;
-  padding: 0 1em;
-  text-decoration: none;
-  border:1px solid darken($color-main4, 20);
-  border-radius: .3em;
-  box-shadow: inset 0 1px 0 0 lighten($color-main4, 20),inset 0 -1px 0 0 $color-main3,inset 0 0 0 1px $color-main3;
-}
-
-.arrow::after {
-  position: relative;
-  top: .05em;
-  content: "";
-  display: inline-block;
-  /* By using an em scale, the arrows will size with the font */
-  width: .6em;
-  height: .6em;
-  border-right: 0.2em solid $color-light;
-  border-top: 0.2em solid $color-light;
-  transform: rotate(45deg);
-  margin-left: 0.5em;
-}
-
-.step {
-  position: relative;
-  padding: 0 0 1em 0;
-}
-
-.step::after {
-  top: 0;
-  content: "";
-  display: inline-block;
-  /* By using an em scale, the arrows will size with the font */
-  width: 1em;
-  height: 1em;
-  border-right: 0.8em solid $color-main4;
-  border-bottom: 0.8em solid $color-main4;
-  transform: rotate(45deg);
-  z-index: 100;
-}
-
-@media (min-width: 780px) {
-  .step::after {
-    position: absolute;
-    top: 6.5em;
-    right: -2em;
-    border-right: 0.8em solid $color-main4;
-    border-top: 0.8em solid $color-main4;
-    border-bottom: 0;
-    margin-left: 0.5em;
-  }
-}
 .openMatikkaInfo {
   margin-bottom: 2.5rem;
   display: inline-block;

@@ -23,7 +23,7 @@ get_header(); ?>
             echo '<div class="remodal" data-remodal-id="modal">';
             echo '<button data-remodal-action="close" class="remodal-close"></button>';
             the_content();
-            echo '<button data-remodal-action="confirm" class="remodal-confirm">OK</button>';
+            echo '<button data-remodal-action="confirm" class="remodal-confirm">SULJE</button>';
             echo '</div>';
         }
     }
@@ -88,17 +88,17 @@ M150.589,19.105"/>
         <section id="goals" class="goals clearfix">
           <div class="row">
             <div class="entry-content clearfix">
-              <div class="one-third column step">
-                <div class="header">oivaltaminen</div>
-                <p>laskeminen kontreettisesti välineen avulla</p>
+              <div class="three columns step">
+                <div class="header"><span class="header-text">tutustu sivuun</span></div>
               </div>
-              <div class="one-third column step">
-                <div class="header">oppiminen</div>
-                <p>laskeminen välineestä tulleen muistikuvan avulla (laskustrategian oppiminen)</p>
+              <div class="three columns step">
+                <div class="header scrollBot"><span class="header-text">ota yhteyttä</span></div>
               </div>
-              <div class="one-third column">
-                <div class="header">osaaminen</div>
-                <p>laskeminen symbolitasolla ilman välinettä</p>
+              <div class="three columns step">
+                <div class="header"><span class="header-text">sovitaan aika</span></div>
+              </div>
+              <div class="three columns">
+                <div class="header"><span class="header-text">asiakkaan tilanteen kartoitus</span></div>
               </div>
             </div>
           </div>

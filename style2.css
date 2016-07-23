@@ -410,6 +410,7 @@ html.remodal-is-locked {
 /* Fix iPad, iPhone glitches */
 .remodal-overlay,
 .remodal-wrapper {
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
 
 /* Necessary styles of the modal dialog */
@@ -447,13 +448,17 @@ html.remodal-is-locked {
 
 .remodal-overlay.remodal-is-opening,
 .remodal-overlay.remodal-is-closing {
+  -webkit-animation-duration: 0.3s;
   animation-duration: 0.3s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards; }
 
 .remodal-overlay.remodal-is-opening {
+  -webkit-animation-name: remodal-overlay-opening-keyframes;
   animation-name: remodal-overlay-opening-keyframes; }
 
 .remodal-overlay.remodal-is-closing {
+  -webkit-animation-name: remodal-overlay-closing-keyframes;
   animation-name: remodal-overlay-closing-keyframes; }
 
 /* Default theme styles of the wrapper */
@@ -466,19 +471,24 @@ html.remodal-is-locked {
   width: 100%;
   margin-bottom: 10px;
   padding: 35px;
+  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   color: #2b2e38;
   background: #fff; }
 
 .remodal.remodal-is-opening,
 .remodal.remodal-is-closing {
+  -webkit-animation-duration: 0.3s;
   animation-duration: 0.3s;
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards; }
 
 .remodal.remodal-is-opening {
+  -webkit-animation-name: remodal-opening-keyframes;
   animation-name: remodal-opening-keyframes; }
 
 .remodal.remodal-is-closing {
+  -webkit-animation-name: remodal-closing-keyframes;
   animation-name: remodal-closing-keyframes; }
 
 /* Vertical align of the modal dialog */
@@ -563,28 +573,63 @@ html.remodal-is-locked {
 
 /* Keyframes
    ========================================================================== */
-
-@keyframes remodal-opening-keyframes {
+@-webkit-keyframes remodal-opening-keyframes {
   from {
+    -webkit-transform: scale(1.05);
     transform: scale(1.05);
     opacity: 0; }
   to {
+    -webkit-transform: none;
     transform: none;
     opacity: 1; } }
 
-@keyframes remodal-closing-keyframes {
+@keyframes remodal-opening-keyframes {
   from {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    opacity: 0; }
+  to {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1; } }
+
+@-webkit-keyframes remodal-closing-keyframes {
+  from {
+    -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 1; }
   to {
+    -webkit-transform: scale(0.95);
     transform: scale(0.95);
     opacity: 0; } }
+
+@keyframes remodal-closing-keyframes {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; }
+  to {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    opacity: 0; } }
+
+@-webkit-keyframes remodal-overlay-opening-keyframes {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 @keyframes remodal-overlay-opening-keyframes {
   from {
     opacity: 0; }
   to {
     opacity: 1; } }
+
+@-webkit-keyframes remodal-overlay-closing-keyframes {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
 
 @keyframes remodal-overlay-closing-keyframes {
   from {
@@ -1102,6 +1147,30 @@ ul > li:before {
 .home .entry-content {
   margin: 0; }
 
+.arrow {
+  display: inline-block;
+  background: #D80032;
+  color: #EDF2F4;
+  line-height: 3em;
+  padding: 0 1em;
+  text-decoration: none;
+  border: 1px solid #72001a;
+  border-radius: .3em;
+  box-shadow: inset 0 1px 0 0 #ff3f6b, inset 0 -1px 0 0 #EF233C, inset 0 0 0 1px #EF233C; }
+
+.arrow::after {
+  position: relative;
+  top: .05em;
+  content: "";
+  display: inline-block;
+  width: .6em;
+  height: .6em;
+  border-right: 0.2em solid #EDF2F4;
+  border-top: 0.2em solid #EDF2F4;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  margin-left: 0.5em; }
+
 .goals {
   text-align: center; }
 
@@ -1109,20 +1178,54 @@ ul > li:before {
   margin: 0; }
 
 .goals .entry-content {
-  margin: 0; }
+  margin: 0 0 1em 0; }
 
-.goals .column .header {
-  font-weight: 600;
-  font-size: 2em;
-  width: 6em;
-  display: inline-block;
-  padding: 2.7em .5em;
-  margin: 0 0 1em 0;
-  color: #FFFFFF;
-  background: #aaaaa1;
+.goals .header {
+  cursor: pointer;
+  width: 8em;
+  height: 8em;
+  display: table;
+  margin: 0 auto 1em auto;
+  background: white;
   border-radius: 6em;
-  border: 0.2em solid white;
+  border: 0.2em solid #373737;
   box-shadow: 6px 3px 15px 0px rgba(0, 0, 0, 0.3); }
+
+.goals .header-text {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  font-weight: 600;
+  font-size: 1em;
+  color: #aaaaa1; }
+
+.step {
+  position: relative;
+  padding: 0 0 1em 0; }
+
+.step::after {
+  position: relative;
+  top: 0;
+  content: "";
+  display: inline-block;
+  /* By using an em scale, the arrows will size with the font */
+  width: 1em;
+  height: 1em;
+  border-right: 0.8em solid #373737;
+  border-bottom: 0.8em solid #373737;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  z-index: 100; }
+
+@media (min-width: 780px) {
+  .step::after {
+    position: absolute;
+    top: 30%;
+    right: -2em;
+    border-right: 0.8em solid #373737;
+    border-top: 0.8em solid #373737;
+    border-bottom: 0;
+    margin-left: 0.5em; } }
 
 .matikka, .nepsy, .yhteystiedot {
   padding: 1em 0 0 0;
@@ -1238,56 +1341,6 @@ blockquote p {
 .colors > ul > li:before {
   content: ""; }
 
-.arrow {
-  display: inline-block;
-  background: #AFA98B;
-  color: #FFFFFF;
-  line-height: 3em;
-  padding: 0 1em;
-  text-decoration: none;
-  border: 1px solid #7d7757;
-  border-radius: .3em;
-  box-shadow: inset 0 1px 0 0 #d9d6c7, inset 0 -1px 0 0 #C7C2AD, inset 0 0 0 1px #C7C2AD; }
-
-.arrow::after {
-  position: relative;
-  top: .05em;
-  content: "";
-  display: inline-block;
-  /* By using an em scale, the arrows will size with the font */
-  width: .6em;
-  height: .6em;
-  border-right: 0.2em solid #FFFFFF;
-  border-top: 0.2em solid #FFFFFF;
-  transform: rotate(45deg);
-  margin-left: 0.5em; }
-
-.step {
-  position: relative;
-  padding: 0 0 1em 0; }
-
-.step::after {
-  top: 0;
-  content: "";
-  display: inline-block;
-  /* By using an em scale, the arrows will size with the font */
-  width: 1em;
-  height: 1em;
-  border-right: 0.8em solid #AFA98B;
-  border-bottom: 0.8em solid #AFA98B;
-  transform: rotate(45deg);
-  z-index: 100; }
-
-@media (min-width: 780px) {
-  .step::after {
-    position: absolute;
-    top: 6.5em;
-    right: -2em;
-    border-right: 0.8em solid #AFA98B;
-    border-top: 0.8em solid #AFA98B;
-    border-bottom: 0;
-    margin-left: 0.5em; } }
-
 .openMatikkaInfo {
   margin-bottom: 2.5rem;
   display: inline-block; }
@@ -1298,7 +1351,8 @@ blockquote p {
   cursor: pointer; }
 
 .openMatikkaInfo:hover > a {
-  transform: scale(1.05); }
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05); }
 
 .openMatikkaInfo:hover::after {
   right: -1.45em; }
@@ -1348,7 +1402,8 @@ blockquote p {
   z-index: 1001;
   left: 0;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   width: 80px; }
 
 #menu-stickymenu {

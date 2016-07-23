@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
   var trainingsContainerClass = '.training__text';
 
 	var init = function(){
-    //initMatikkaInfo();
+    initScrollBot();
     initOpenTrainings();
     initColorPicker();
 	};
@@ -32,23 +32,6 @@ jQuery(document).ready(function($) {
     trainings.each(initOpenTraining);
   };
 
-  var initMatikkaInfo = function(){
-    var matikkaHeader = jQuery('.matikka .entry-content > h2');
-    var openMatikkaInfoContainer = jQuery('<h2/>')
-    openMatikkaInfoContainer.addClass('openMatikkaInfo')
-    var matikkaInfo = jQuery('<a/>');
-    matikkaInfo.attr('href', '#modal');
-    matikkaInfo.attr('class', 'openMatikkaInfo__icon');
-    matikkaInfo.text('?');
-    openMatikkaInfoContainer.append(matikkaInfo);
-    matikkaHeader.after(openMatikkaInfoContainer);
-
-    $('.openMatikkaInfo').click(function(){
-      console.log('hello');
-    });
-
-  };
-
   var initColorPicker = function(){
     var colors = jQuery('.colors > ul > li');
     jQuery.each(colors, function(index, value){
@@ -61,6 +44,12 @@ jQuery(document).ready(function($) {
       });
     });
   }
+
+  var initScrollBot = function(){
+    jQuery('.scrollBot').click(function(){
+      jQuery('body').animate({ scrollTop: $(document).height() }, 1000);
+    });
+  };
 
   init();
 });
