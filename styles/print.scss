@@ -1,0 +1,59 @@
+@media print {
+
+  section {
+    border-top: none !important;
+    page-break-after: always;
+    padding: 0 !important;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2.2rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  .entry-content {
+    margin: 1em;
+  }
+
+  .training {
+    margin: 0;
+  }
+
+  .training__header::after {
+    content: "";
+  }
+
+  .training__text {
+    display: block;
+  }
+
+  .remodal {
+    padding-top: 0;
+  }
+  .remodal-is-opened {
+    filter: none !important;
+  }
+  .remodal-overlay {
+    display: none !important;
+  }
+  .remodal-wrapper {
+    display:block !important;
+    position: static;
+    margin-top: 0;
+  }
+
+  .profile-image,
+  .openMatikkaInfo,
+  .remodal-close,
+  .remodal-confirm,
+  .goals {
+    display: none;
+  }
+}

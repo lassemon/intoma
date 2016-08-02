@@ -47,7 +47,7 @@ jQuery(document).ready(function($) {
 
   var initScrollBot = function(){
     jQuery('.scrollBot').click(function(){
-      jQuery('body').animate({ scrollTop: $(document).height() }, 1000);
+      jQuery('body').animate({ scrollTop: $(document).height() }, 400);
     });
   };
 

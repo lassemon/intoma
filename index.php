@@ -78,22 +78,16 @@ M150.589,19.105"/>
           ?>
         </section>
         <section id="goals" class="goals clearfix">
-          <div class="row">
-            <div class="entry-content clearfix">
-              <div class="three columns step">
-                <div class="header"><span class="header-text">tutustu sivuun</span></div>
-              </div>
-              <div class="three columns step">
-                <div class="header scrollBot"><span class="header-text">ota yhteyttä</span></div>
-              </div>
-              <div class="three columns step">
-                <div class="header"><span class="header-text">sovitaan aika</span></div>
-              </div>
-              <div class="three columns">
-                <div class="header"><span class="header-text">keskustellaan tilanteestasi</span></div>
-              </div>
-            </div>
-          </div>
+          <?php
+              $query = new WP_query('pagename=goals');
+              if( $query->have_posts() ){
+                  while( $query->have_posts() ){
+                      $query->the_post();
+                      the_content();
+                  }
+              }
+              wp_reset_postdata();
+          ?>
         </section>
         <section id="matikka" class="matikka clearfix">
           <?php

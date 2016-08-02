@@ -4,7 +4,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var rename = require('gulp-rename');
 var minifycss = require('gulp-csso');
 
-gulp.task('styles', ['styles-main', 'styles2', 'styles3', 'styles4'], function() {
+gulp.task('styles', ['styles-main'], function() {
 });
 
 
@@ -15,7 +15,7 @@ gulp.task('styles-main', function() {
 		includePaths: ['.'],
 	}).on('error', sass.logError))
 	.pipe(autoprefixer('last 2 version'))
-    .pipe(rename('style1.css'))
+    .pipe(rename('style.css'))
 	.pipe(gulp.dest('./'))
 });
 

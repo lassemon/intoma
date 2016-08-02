@@ -26,6 +26,11 @@ ul > li:before {
   color: $color-main4;
 }
 
+.small {
+  font-size: 1em;
+  font-style: italic;
+}
+
 .container {
   width: 90%;
   padding: 0 0 1em 0;
@@ -222,3 +227,18 @@ blockquote p {
 }
 
 @import 'remodal-overwrite';
+
+@media (max-width: 780px) {
+  html, body {
+    font-size: 16px;
+  }
+  .profile-image {
+    width: 50%;
+  }
+}
+
+@media (max-width: 400px) {
+  html, body {
+    font-size: 14px;
+  }
+}
