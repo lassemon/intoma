@@ -1143,7 +1143,7 @@ ul > li:before {
   vertical-align: middle;
   width: 100%;
   font-weight: 600;
-  font-size: 2em;
+  font-size: 1.5em;
   color: #2B2D42; }
 
 .goals .contactGoal {
@@ -1159,11 +1159,10 @@ ul > li:before {
   left: 1.5em;
   content: "";
   display: inline-block;
-  /* By using an em scale, the arrows will size with the font */
-  width: 1em;
-  height: 1em;
-  border-right: 0.8em solid #2B2D42;
-  border-bottom: 0.8em solid #2B2D42;
+  width: .5em;
+  height: .5em;
+  border-right: 0.5em solid #2B2D42;
+  border-bottom: 0.5em solid #2B2D42;
   transform: rotate(45deg);
   z-index: 100; }
 
@@ -1188,8 +1187,10 @@ ul > li:before {
   .step::after {
     position: absolute;
     left: auto;
-    top: 30%;
-    right: -2em;
+    top: 3em;
+    right: -1.5em;
+    width: .7em;
+    height: .7em;
     border-right: 0.8em solid #2B2D42;
     border-top: 0.8em solid #2B2D42;
     border-bottom: 0;
@@ -1365,7 +1366,7 @@ blockquote p {
   .profile-image {
     width: 50%; } }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   html, body {
     font-size: 14px; } }
 
