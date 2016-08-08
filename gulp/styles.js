@@ -11,7 +11,7 @@ gulp.task('styles', ['styles-main'], function() {
 gulp.task('styles-main', function() {
     return gulp.src('./styles/index.scss')
 	.pipe(sass({
-		outputStyle: 'nested',
+		outputStyle: 'compressed',
 		includePaths: ['.'],
 	}).on('error', sass.logError))
 	.pipe(autoprefixer('last 2 version'))

@@ -11,6 +11,6 @@ var jsPaths = [
 gulp.task('js', function(){
 	return gulp.src(jsPaths)
 		.pipe(concat('bundle.js'))
-		//.pipe(uglify())
+		.pipe(uglify())
   	.pipe(gulp.dest('./'))
 });

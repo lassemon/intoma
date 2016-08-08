@@ -32,7 +32,7 @@ function custom_enqueue_styles(){
 add_action( 'wp_enqueue_scripts', 'custom_enqueue_styles', 15 );
 
 function scripts(){
-	wp_enqueue_script('bundle-script', get_template_directory_uri() . '/bundle.js', array(), true);
+	wp_enqueue_script('bundle-script', get_template_directory_uri() . '/bundle.js', array(), true, true);
 }
 add_action('wp_enqueue_scripts', 'scripts', 20);
 
