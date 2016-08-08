@@ -1173,7 +1173,7 @@ ul > li:before {
     width: 8em;
     height: 8em;
     display: table;
-    margin: 0 auto;
+    margin: 0 auto .5em auto;
     background: #cddbe1;
     border-radius: 6em; }
   .goals .header-text {
