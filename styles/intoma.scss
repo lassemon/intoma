@@ -229,6 +229,16 @@ blockquote p {
   right: -1.45em;
 }
 
+footer {
+  text-align: center;
+}
+
+.social-button {
+  height: 70px;
+  width: 70px;
+  line-height: 70px;
+}
+
 @import 'remodal-overwrite';
 
 /* Larger than phablet */
